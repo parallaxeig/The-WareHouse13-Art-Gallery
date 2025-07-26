@@ -15,6 +15,9 @@ const Backstory: React.FC = () => {
         <p className="backstory-text">
           Step inside the Warehouse 13 Art Gallery and discover a world where art transcends boundaries, stories come to life, and every piece holds a unique place in the metaverse. Join us as we continue to push the limits of digital expression and redefine the future of art.
         </p>
+        <p className="backstory-text">
+          The largest art galleries are on our phones and digital devices. What if you could mint that cool photo you took on a trip with friends in Masai Mara?
+        </p>
       </div>
     </section>
   );
