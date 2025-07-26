@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3 className="footer-title">NFT Art Gallery</h3>
+            <h3 className="footer-title">The Warehouse 13 Art Gallery</h3>
             <p className="footer-description">
               Experience the future of digital art with our immersive VR/AR NFT gallery platform.
             </p>
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
         
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © 2024 NFT Art Gallery. All rights reserved.
+            © 2024 The Warehouse 13 Art Gallery. All rights reserved.
           </p>
           <div className="footer-legal">
             <a href="#" className="footer-legal-link">Privacy Policy</a>
