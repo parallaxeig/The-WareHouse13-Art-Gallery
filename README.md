@@ -22,10 +22,9 @@ This project is a Progressive Web App (PWA) for a digital NFT-based Art Gallery 
 - Testing and deployment
 
 ## Testing
-Critical features to test:
+Critical features yet to test:
 - File upload and validation
 - Wallet connection and transaction signing
 - NFT minting process
 - VR/AR gallery navigation and interaction
 
-Please specify your preferred testing approach: critical-path or thorough testing.
