@@ -3,7 +3,7 @@
 This project is a Progressive Web App (PWA) for a digital NFT-based Art Gallery with VR/AR capabilities.
 
 ## Features
-- Upload high-resolution digital artwork (PNG, SVG, etc.)
+- Upload high-resolution digital artwork (PNG, SVG, etc.) from your phone's gallery with Metadata
 - Mint NFTs linked to artwork on blockchain
 - Wallet integration including One Key hardware wallet
 - Immersive VR/AR gallery experience
@@ -22,10 +22,9 @@ This project is a Progressive Web App (PWA) for a digital NFT-based Art Gallery 
 - Testing and deployment
 
 ## Testing
-Critical features to test:
+Critical features yet to test:
 - File upload and validation
 - Wallet connection and transaction signing
 - NFT minting process
 - VR/AR gallery navigation and interaction
 
-Please specify your preferred testing approach: critical-path or thorough testing.
