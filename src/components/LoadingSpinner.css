@@ -1,0 +1,65 @@
+.loading-spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner__svg {
+  animation: spin 1s linear infinite;
+}
+
+.loading-spinner__circle {
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-dasharray: 31.416;
+  stroke-dashoffset: 31.416;
+  animation: spinner-dash 2s ease-in-out infinite;
+}
+
+/* Sizes */
+.loading-spinner--sm .loading-spinner__svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.loading-spinner--md .loading-spinner__svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.loading-spinner--lg .loading-spinner__svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Colors */
+.loading-spinner--primary {
+  color: var(--color-primary-500);
+}
+
+.loading-spinner--secondary {
+  color: var(--color-secondary-500);
+}
+
+.loading-spinner--white {
+  color: white;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinner-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
