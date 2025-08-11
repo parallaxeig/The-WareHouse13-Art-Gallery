@@ -81,7 +81,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
         <button
           className="fluent-header__mobile-toggle"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-expanded={isMobileMenuOpen}
+          aria-expanded={isMobileMenuOpen ? 'true' : 'false'}
           aria-controls="mobile-menu"
           aria-label="Toggle mobile menu"
         >
@@ -120,3 +120,5 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
     </header>
   );
 };
+
+export default Header;
