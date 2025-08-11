@@ -1,4 +1,4 @@
-/* Landing Page Styles */
+/* Enhanced Landing Page Styles with Improved Responsiveness */
 
 .landing-page {
   min-height: 100vh;
@@ -10,12 +10,24 @@
 .landing-page__container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--space-4);
 }
 
-/* Responsive adjustments */
+/* Responsive container with mobile-first approach */
+@media (max-width: 1024px) {
+  .landing-page__container {
+    padding: 0 var(--space-3);
+  }
+}
+
 @media (max-width: 768px) {
   .landing-page__container {
-    padding: 0 1rem;
+    padding: 0 var(--space-3);
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-page__container {
+    padding: 0 var(--space-2);
   }
 }

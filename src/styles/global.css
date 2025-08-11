@@ -1,4 +1,4 @@
-/* Global Styles - Import all component styles */
+/* Enhanced Global Styles with Mobile-First Responsive Design */
 @import './variables.css';
 @import './design-system.css';
 @import '../components/Hero.css';
@@ -19,6 +19,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed header */
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -26,20 +31,17 @@ body {
   color: var(--color-secondary-900);
   line-height: var(--line-height-normal);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Focus styles */
+/* Focus styles for accessibility */
 :focus-visible {
   outline: 2px solid var(--color-primary-500);
   outline-offset: 2px;
 }
 
-/* Utility classes */
+/* Utility classes with mobile-first approach */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -60,14 +62,30 @@ html {
   justify-content: center;
 }
 
-/* Responsive utilities */
+/* Enhanced responsive utilities */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 var(--space-3);
+  }
+}
+
 @media (max-width: 768px) {
   .container {
-    padding: 0 var(--space-4);
+    padding: 0 var(--space-3);
   }
   
   .section {
     padding: var(--space-12) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--space-2);
+  }
+  
+  .section {
+    padding: var(--space-8) 0;
   }
 }
 
@@ -85,7 +103,7 @@ html {
   z-index: 9999;
 }
 
-/* Animation utilities */
+/* Enhanced animation utilities */
 .animate-fade-in {
   animation: fadeIn 0.5s ease-out;
 }
@@ -101,7 +119,7 @@ html {
   }
 }
 
-/* Button styles */
+/* Enhanced button styles with touch targets */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -114,6 +132,7 @@ html {
   cursor: pointer;
   transition: all var(--transition-normal);
   text-decoration: none;
+  min-height: 44px; /* Touch target size */
 }
 
 .btn-primary {
@@ -143,7 +162,7 @@ html {
   font-size: var(--font-size-lg);
 }
 
-/* Card styles */
+/* Enhanced card styles */
 .card {
   background: white;
   border-radius: var(--radius-lg);
@@ -157,24 +176,58 @@ html {
   transform: translateY(-2px);
 }
 
-/* Grid system */
+/* Enhanced grid system with mobile-first approach */
 .grid {
   display: grid;
   gap: var(--space-6);
 }
 
 .grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .grid-3 {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-/* Responsive grid */
+/* Responsive grid with mobile-first breakpoints */
 @media (max-width: 768px) {
   .grid-2,
   .grid-3 {
     grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    gap: var(--space-3);
+  }
+}
+
+/* Prevent horizontal overflow */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure buttons and interactive elements have proper touch targets */
+button, a, input, select, textarea {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

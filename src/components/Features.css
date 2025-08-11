@@ -1,3 +1,5 @@
+/* Enhanced Features Section with Mobile-First Responsive Design */
+
 .features {
   padding: var(--space-20) 0;
   background: var(--color-secondary-50);
@@ -29,7 +31,7 @@
 }
 
 .features__title {
-  font-size: var(--font-size-3xl);
+  font-size: clamp(1.75rem, 4vw, var(--font-size-3xl));
   font-weight: var(--font-weight-bold);
   color: var(--color-secondary-900);
   margin-bottom: var(--space-4);
@@ -37,14 +39,14 @@
 }
 
 .features__subtitle {
-  font-size: var(--font-size-lg);
+  font-size: clamp(1rem, 2.5vw, var(--font-size-lg));
   color: var(--color-secondary-600);
   line-height: var(--line-height-relaxed);
 }
 
 .features__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--space-8);
 }
 
@@ -63,17 +65,72 @@
   }
 }
 
-@media (max-width: 768px) {
+/* Mobile-first responsive breakpoints */
+@media (max-width: 1024px) {
   .features {
     padding: var(--space-16) 0;
   }
-
-  .features__title {
-    font-size: var(--font-size-2xl);
+  
+  .features__container {
+    padding: 0 var(--space-3);
   }
+  
+  .features__grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+  }
+}
 
+@media (max-width: 768px) {
+  .features {
+    padding: var(--space-12) 0;
+  }
+  
+  .features__container {
+    padding: 0 var(--space-3);
+  }
+  
+  .features__header {
+    margin-bottom: var(--space-12);
+    padding: 0 var(--space-2);
+  }
+  
+  .features__title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+  
+  .features__subtitle {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+  }
+  
   .features__grid {
     grid-template-columns: 1fr;
-    gap: var(--space-6);
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .features {
+    padding: var(--space-8) 0;
+  }
+  
+  .features__container {
+    padding: 0 var(--space-2);
+  }
+  
+  .features__header {
+    margin-bottom: var(--space-8);
+  }
+  
+  .features__title {
+    font-size: clamp(1.25rem, 6vw, 1.5rem);
+  }
+  
+  .features__subtitle {
+    font-size: clamp(0.875rem, 3.5vw, 1rem);
+  }
+  
+  .features__grid {
+    gap: var(--space-3);
   }
 }

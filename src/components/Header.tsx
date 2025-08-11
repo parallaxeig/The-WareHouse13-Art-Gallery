@@ -19,6 +19,26 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    
+    // Close mobile menu if open
+    setIsMobileMenuOpen(false);
+    
+    // Smooth scroll to section
+    const element = document.querySelector(href);
+    if (element) {
+      const headerHeight = document.querySelector('.header')?.clientHeight || 70;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerHeight - 20;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const navItems = [
     { label: 'Gallery', href: '#gallery' },
     { label: 'Create', href: '#create' },
@@ -40,7 +60,11 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           <ul className="header__nav-list">
             {navItems.map((item) => (
               <li key={item.label} className="header__nav-item">
-                <a href={item.href} className="header__nav-link">
+                <a 
+                  href={item.href} 
+                  className="header__nav-link"
+                  onClick={(e) => scrollToSection(e, item.href)}
+                >
                   {item.label}
                 </a>
               </li>
@@ -79,7 +103,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                   key={item.label}
                   href={item.href}
                   className="header__mobile-link"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => scrollToSection(e, item.href)}
                 >
                   {item.label}
                 </a>
