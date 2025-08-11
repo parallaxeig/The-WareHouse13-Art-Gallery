@@ -1,115 +1,98 @@
 /* Enhanced Feature Card with Mobile-First Responsive Design */
 
-.feature-card {
-  background: white;
-  border-radius: var(--radius-xl);
-  padding: var(--space-8);
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-normal);
-  border: 1px solid var(--color-secondary-100);
+.fluent-feature-card {
+  background-color: var(--fluent-color-neutral-0);
+  border: 1px solid var(--fluent-color-neutral-8);
+  border-radius: var(--fluent-border-radius-xlarge);
+  padding: var(--fluent-space-vertical-xl);
+  box-shadow: var(--fluent-shadow-2);
+  transition: all var(--fluent-duration-normal) var(--fluent-curve-easy-ease);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--fluent-space-vertical-m);
 }
 
-.feature-card::before {
+.fluent-feature-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--color-primary-500), var(--color-primary-400));
+  height: 3px;
+  background: linear-gradient(90deg, var(--fluent-color-brand-80), var(--fluent-color-brand-100));
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform var(--transition-normal);
+  transition: transform var(--fluent-duration-normal) var(--fluent-curve-easy-ease);
 }
 
-.feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--color-primary-200);
+.fluent-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--fluent-shadow-16);
+  border-color: var(--fluent-color-brand-140);
 }
 
-.feature-card:hover::before {
+.fluent-feature-card:hover::before {
   transform: scaleX(1);
 }
 
-.feature-icon {
-  font-size: var(--font-size-4xl);
-  margin-bottom: var(--space-4);
+.fluent-feature-card:focus-within {
+  outline: 2px solid var(--fluent-color-brand-80);
+  outline-offset: 2px;
+}
+
+.fluent-feature-card__icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, var(--color-primary-50), var(--color-primary-100));
-  border-radius: var(--radius-xl);
-  margin-bottom: var(--space-6);
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--fluent-color-brand-150), var(--fluent-color-brand-140));
+  border-radius: var(--fluent-border-radius-xlarge);
+  font-size: var(--fluent-font-size-600);
+  color: var(--fluent-color-brand-80);
+  flex-shrink: 0;
 }
 
-.feature-title {
-  font-size: clamp(1.125rem, 3vw, var(--font-size-xl));
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-secondary-900);
-  margin-bottom: var(--space-3);
-  line-height: var(--line-height-tight);
+.fluent-feature-card__title {
+  color: var(--fluent-color-neutral-90);
+  margin: 0;
+  line-height: var(--fluent-line-height-500);
 }
 
-.feature-description {
-  color: var(--color-secondary-600);
-  line-height: var(--line-height-relaxed);
-  font-size: clamp(0.875rem, 2vw, var(--font-size-base));
+.fluent-feature-card__description {
+  color: var(--fluent-color-neutral-70);
+  margin: 0;
+  line-height: var(--fluent-line-height-300);
+  flex-grow: 1;
 }
 
-/* Mobile-first responsive breakpoints */
-@media (max-width: 1024px) {
-  .feature-card {
-    padding: var(--space-6);
-  }
-
-  .feature-icon {
-    width: 70px;
-    height: 70px;
-    font-size: var(--font-size-3xl);
-  }
-}
-
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  .feature-card {
-    padding: var(--space-5);
+  .fluent-feature-card {
+    padding: var(--fluent-space-vertical-l);
+    gap: var(--fluent-space-vertical-s);
   }
 
-  .feature-icon {
-    width: 60px;
-    height: 60px;
-    font-size: var(--font-size-2xl);
-  }
-
-  .feature-title {
-    font-size: clamp(1rem, 4vw, 1.125rem);
-  }
-
-  .feature-description {
-    font-size: clamp(0.8rem, 2.5vw, 0.875rem);
+  .fluent-feature-card__icon {
+    width: 40px;
+    height: 40px;
+    font-size: var(--fluent-font-size-500);
   }
 }
 
 @media (max-width: 480px) {
-  .feature-card {
-    padding: var(--space-4);
+  .fluent-feature-card {
+    padding: var(--fluent-space-vertical-m);
+    text-align: center;
+    align-items: center;
   }
 
-  .feature-icon {
-    width: 50px;
-    height: 50px;
-    font-size: var(--font-size-xl);
-  }
-
-  .feature-title {
-    font-size: clamp(0.9rem, 5vw, 1rem);
-  }
-
-  .feature-description {
-    font-size: clamp(0.75rem, 3vw, 0.8rem);
+  .fluent-feature-card__icon {
+    width: 36px;
+    height: 36px;
+    font-size: var(--fluent-font-size-400);
   }
 }

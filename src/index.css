@@ -1,36 +1,49 @@
 /* Basic global styles */
 
+/* Import Fluent UI 2 Design System */
+@import './styles/fluent-design-system.css';
+
+/* Global Fluent UI 2 Base Styles */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #ffffff;
-  color: var(--color-secondary-900);
-  line-height: var(--line-height-normal);
+  font-family: var(--fluent-font-family-base);
+  background-color: var(--fluent-color-neutral-0);
+  color: var(--fluent-color-neutral-90);
+  line-height: var(--fluent-line-height-300);
+  font-size: var(--fluent-font-size-300);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-  color: inherit;
+  color: var(--fluent-color-brand-80);
   text-decoration: none;
+  transition: color var(--fluent-duration-faster) var(--fluent-curve-easy-ease);
+}
+
+a:hover {
+  color: var(--fluent-color-brand-70);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--fluent-color-brand-80);
+  outline-offset: 2px;
+  border-radius: var(--fluent-border-radius-small);
 }
 
 * {
   box-sizing: border-box;
 }
 
-/* Utility classes */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+/* Enhanced focus management */
+:focus-visible {
+  outline: 2px solid var(--fluent-color-brand-80);
+  outline-offset: 2px;
+  border-radius: var(--fluent-border-radius-small);
 }
 
+/* Utility classes */
+.visually-hidden,
 .sr-only {
   position: absolute;
   width: 1px;
@@ -41,4 +54,139 @@ a {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* Enhanced grid system with Fluent spacing */
+.fluent-grid {
+  display: grid;
+  gap: var(--fluent-space-horizontal-xl);
+}
+
+.fluent-grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.fluent-grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.fluent-grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Container utilities */
+.fluent-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--fluent-space-horizontal-l);
+}
+
+.fluent-container--narrow {
+  max-width: 800px;
+}
+
+.fluent-container--wide {
+  max-width: 1400px;
+}
+
+/* Spacing utilities */
+.fluent-mt-xs { margin-top: var(--fluent-space-vertical-xs); }
+.fluent-mt-s { margin-top: var(--fluent-space-vertical-s); }
+.fluent-mt-m { margin-top: var(--fluent-space-vertical-m); }
+.fluent-mt-l { margin-top: var(--fluent-space-vertical-l); }
+.fluent-mt-xl { margin-top: var(--fluent-space-vertical-xl); }
+.fluent-mt-xxl { margin-top: var(--fluent-space-vertical-xxl); }
+.fluent-mt-xxxl { margin-top: var(--fluent-space-vertical-xxxl); }
+
+.fluent-mb-xs { margin-bottom: var(--fluent-space-vertical-xs); }
+.fluent-mb-s { margin-bottom: var(--fluent-space-vertical-s); }
+.fluent-mb-m { margin-bottom: var(--fluent-space-vertical-m); }
+.fluent-mb-l { margin-bottom: var(--fluent-space-vertical-l); }
+.fluent-mb-xl { margin-bottom: var(--fluent-space-vertical-xl); }
+.fluent-mb-xxl { margin-bottom: var(--fluent-space-vertical-xxl); }
+.fluent-mb-xxxl { margin-bottom: var(--fluent-space-vertical-xxxl); }
+
+/* Card component */
+.fluent-card {
+  background-color: var(--fluent-color-neutral-0);
+  border: 1px solid var(--fluent-color-neutral-8);
+  border-radius: var(--fluent-border-radius-xlarge);
+  padding: var(--fluent-space-vertical-l);
+  box-shadow: var(--fluent-shadow-2);
+  transition: all var(--fluent-duration-normal) var(--fluent-curve-easy-ease);
+}
+
+.fluent-card:hover {
+  box-shadow: var(--fluent-shadow-8);
+  transform: translateY(-2px);
+  border-color: var(--fluent-color-neutral-12);
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 768px) {
+  .fluent-grid-2,
+  .fluent-grid-3,
+  .fluent-grid-4 {
+    grid-template-columns: 1fr;
+    gap: var(--fluent-space-horizontal-m);
+  }
+  
+  .fluent-container {
+    padding: 0 var(--fluent-space-horizontal-m);
+  }
+}
+
+@media (max-width: 480px) {
+  .fluent-grid {
+    gap: var(--fluent-space-horizontal-s);
+  }
+  
+  .fluent-container {
+    padding: 0 var(--fluent-space-horizontal-s);
+  }
+}
+
+/* Prevent horizontal overflow */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure interactive elements have proper touch targets */
+button, a, input, select, textarea {
+  min-height: 32px;
+  min-width: 32px;
+}
+
+@media (max-width: 768px) {
+  button, a, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .fluent-card {
+    border-width: 2px;
+  }
+  
+  .fluent-button {
+    border-width: 2px;
+  }
 }

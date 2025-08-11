@@ -3,7 +3,7 @@ import './Button.css';
 
 interface ButtonProps {
   children?: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'subtle';
   size?: 'sm' | 'md' | 'lg';
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
@@ -31,13 +31,14 @@ const Button: React.FC<ButtonProps> = ({
   title,
   ...rest
 }) => {
-  const sizeClass = `button--${size}`;
-  const variantClass = `button--${variant}`;
-  const widthClass = fullWidth ? 'button--full-width' : '';
+  const baseClass = 'fluent-button';
+  const sizeClass = `fluent-button--${size}`;
+  const variantClass = `fluent-button--${variant}`;
+  const widthClass = fullWidth ? 'fluent-button--full-width' : '';
 
   return (
     <button
-      className={`button ${sizeClass} ${variantClass} ${widthClass} ${className}`}
+      className={`${baseClass} ${sizeClass} ${variantClass} ${widthClass} ${className}`}
       onClick={onClick}
       disabled={disabled}
       type={type}
@@ -45,9 +46,9 @@ const Button: React.FC<ButtonProps> = ({
       title={title}
       {...rest}
     >
-      {leftIcon && <span className="button__icon button__icon--left">{leftIcon}</span>}
-      {children && <span className="button__text">{children}</span>}
-      {rightIcon && <span className="button__icon button__icon--right">{rightIcon}</span>}
+      {leftIcon && <span className="fluent-button__icon fluent-button__icon--left">{leftIcon}</span>}
+      {children && <span className="fluent-button__text">{children}</span>}
+      {rightIcon && <span className="fluent-button__icon fluent-button__icon--right">{rightIcon}</span>}
     </button>
   );
 };

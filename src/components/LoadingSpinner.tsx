@@ -14,13 +14,13 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
 }) => {
   return (
     <div 
-      className={`loading-spinner loading-spinner--${size} loading-spinner--${color} ${className}`}
+      className={`fluent-loading-spinner fluent-loading-spinner--${size} fluent-loading-spinner--${color} ${className}`}
       role="status"
       aria-label="Loading"
     >
-      <svg className="loading-spinner__svg" viewBox="0 0 24 24">
+      <svg className="fluent-loading-spinner__svg" viewBox="0 0 24 24">
         <circle
-          className="loading-spinner__circle"
+          className="fluent-loading-spinner__circle"
           cx="12"
           cy="12"
           r="10"
