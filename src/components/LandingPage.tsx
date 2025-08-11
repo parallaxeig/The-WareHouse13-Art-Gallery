@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header';
 import Hero from './Hero';
 import Features from './Features';
 import Backstory from './Backstory';
@@ -9,10 +10,13 @@ import './LandingPage.css';
 const LandingPage: React.FC = () => {
   return (
     <div className="landing-page">
-      <Hero />
-      <Features />
-      <Backstory />
-      <Testimonials />
+      <Header />
+      <main>
+        <Hero />
+        <Features />
+        <Backstory />
+        <Testimonials />
+      </main>
       <Footer />
     </div>
   );

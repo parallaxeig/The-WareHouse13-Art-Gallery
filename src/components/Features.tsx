@@ -5,54 +5,53 @@ import './Features.css';
 const Features: React.FC = () => {
   const features = [
     {
-      icon: '🎨',
-      title: 'Upload & Create',
-      description: 'Upload high-resolution digital artwork in PNG, SVG, and other formats. Our platform supports various file types for maximum creativity.'
-    },
-    {
-      icon: '🔗',
-      title: 'Mint NFTs',
-      description: 'Transform your digital art into blockchain-verified NFTs with seamless minting process and secure ownership verification.'
-    },
-    {
-      icon: '💳',
-      title: 'Wallet Integration',
-      description: 'Connect with MetaMask, WalletConnect, One Key hardware wallet, and other popular wallet solutions for secure transactions.'
-    },
-    {
       icon: '🥽',
-      title: 'VR/AR Gallery',
-      description: 'Experience your art collection in immersive virtual and augmented reality environments. Step into your gallery like never before.'
+      title: 'VR Gallery Experience',
+      description: 'Immerse yourself in a virtual reality art gallery where you can walk through and interact with NFT collections in a 3D environment.'
     },
     {
       icon: '📱',
-      title: 'PWA Experience',
-      description: 'Enjoy offline support, installable app experience, and responsive design that works seamlessly across all devices.'
+      title: 'AR Art Preview',
+      description: 'Use augmented reality to preview how NFT artwork would look in your real-world space before making a purchase.'
     },
     {
-      icon: '🔒',
-      title: 'Secure & Decentralized',
-      description: 'Built on blockchain technology with decentralized storage ensuring your artwork and ownership rights are protected forever.'
+      icon: '🎨',
+      title: 'Easy NFT Creation',
+      description: 'Upload your digital artwork and mint NFTs with just a few clicks. No technical knowledge required.'
+    },
+    {
+      icon: '🔗',
+      title: 'Multi-Chain Support',
+      description: 'Connect wallets from Ethereum, Polygon, and other popular blockchains to access your entire NFT collection.'
+    },
+    {
+      icon: '👥',
+      title: 'Community Curation',
+      description: 'Join a community of artists and collectors who help curate and promote exceptional digital artwork.'
+    },
+    {
+      icon: '💎',
+      title: 'Rarity Analytics',
+      description: 'Advanced tools to analyze NFT rarity, market trends, and investment potential with real-time data.'
     }
   ];
 
   return (
-    <section className="features">
-      <div className="features-container">
-        <div className="features-header">
-          <h2 className="features-title">Powerful Features for Digital Artists</h2>
-          <p className="features-subtitle">
-            Everything you need to create, mint, and showcase your digital art in the metaverse
+    <section className="features" id="features">
+      <div className="features__container">
+        <header className="features__header">
+          <h2 className="features__title">Revolutionary NFT Experience</h2>
+          <p className="features__subtitle">
+            Discover the future of digital art with cutting-edge VR/AR technology 
+            and seamless blockchain integration.
           </p>
-        </div>
-        <div className="features-grid">
+        </header>
+        
+        <div className="features__grid">
           {features.map((feature, index) => (
-            <FeatureCard
-              key={index}
-              icon={feature.icon}
-              title={feature.title}
-              description={feature.description}
-            />
+            <div key={feature.title} className="features__item" style={{ animationDelay: `${index * 0.1}s` }}>
+              <FeatureCard {...feature} />
+            </div>
           ))}
         </div>
       </div>
