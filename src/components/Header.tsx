@@ -71,14 +71,13 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
         </nav>
 
         <div className="fluent-header__actions">
-          <Button appearance="subtle" size="medium">
+          <Button size="md">
             Connect Wallet
           </Button>
-          <Button appearance="primary" size="medium">
+          <Button size="md">
             Sign Up
           </Button>
         </div>
-
         <button
           className="fluent-header__mobile-toggle"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -86,13 +85,13 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           aria-controls="mobile-menu"
           aria-label="Toggle mobile menu"
         >
+
           <span className="fluent-header__hamburger">
             <span></span>
             <span></span>
             <span></span>
           </span>
         </button>
-
         {isMobileMenuOpen && (
           <div id="mobile-menu" className="fluent-header__mobile-menu">
             <nav className="fluent-header__mobile-nav" aria-label="Mobile navigation">
@@ -107,10 +106,10 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 </a>
               ))}
               <div className="fluent-header__mobile-actions">
-                <Button appearance="outline" size="medium" fullWidth>
+                <Button size="md" fullWidth>
                   Connect Wallet
                 </Button>
-                <Button appearance="primary" size="medium" fullWidth>
+                <Button size="md" fullWidth>
                   Sign Up
                 </Button>
               </div>
@@ -121,5 +120,3 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
     </header>
   );
 };
-
-export default Header;
