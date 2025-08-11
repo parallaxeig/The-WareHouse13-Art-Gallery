@@ -1,0 +1,220 @@
+/* Modern Design System - Clean & Professional */
+
+:root {
+  /* Color Palette - Professional & Accessible */
+  --color-primary: #2563eb;
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #1d4ed8;
+  
+  --color-secondary: #64748b;
+  --color-secondary-light: #94a3b8;
+  --color-secondary-dark: #475569;
+  
+  --color-background: #ffffff;
+  --color-background-subtle: #f8fafc;
+  --color-background-muted: #f1f5f9;
+  
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+  --color-text-inverse: #ffffff;
+  
+  --color-border: #e2e8f0;
+  --color-border-light: #f1f5f9;
+  --color-border-dark: #cbd5e1;
+  
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #06b6d4;
+  
+  /* Typography Scale */
+  --font-family-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25remI see there are syntax errors in the new design system CSS file related to missing colons and semicolons. I will fix these errors and complete the new design system CSS file content properly.
+
+<edit_file>
+<path>src/styles/new-design-system.css</path>
+<content>
+<<<<<<< SEARCH
+/* Modern Design System - Clean & Professional */
+
+:root {
+  /* Color Palette - Professional & Accessible */
+  --color-primary: #2563eb;
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #1d4ed8;
+  
+  --color-secondary: #64748b;
+=======
+/* Modern Design System - Clean & Professional */
+
+:root {
+  /* Color Palette - Professional & Accessible */
+  --color-primary: #2563eb;
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #1d4ed8;
+
+  --color-secondary: #64748b;
+  --color-secondary-light: #94a3b8;
+  --color-secondary-dark: #475569;
+
+  --color-background: #f9fafb;
+  --color-surface: #ffffff;
+  --color-error: #dc2626;
+  --color-warning: #f59e0b;
+  --color-success: #16a34a;
+  --color-info: #3b82f6;
+
+  /* Typography */
+  --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-size-base: 16px;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease-in-out;
+  --transition-medium: 0.4s ease-in-out;
+  --transition-slow: 0.6s ease-in-out;
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  color: var(--color-secondary-dark);
+  background-color: var(--color-background);
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+/* Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  border: none;
+  transition: background-color var(--transition-fast);
+}
+
+.button-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.button-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.button-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.button-secondary:hover {
+  background-color: var(--color-secondary-dark);
+}
+
+/* Cards */
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-md);
+  transition: box-shadow var(--transition-medium);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Utility classes */
+.mt-md {
+  margin-top: var(--space-md);
+}
+
+.mb-md {
+  margin-bottom: var(--space-md);
+}
+
+.p-md {
+  padding: var(--space-md);
+}
+ I have gathered the following information:
+
+Information Gathered:
+- The app uses Fluent UI 2 Design System variables for colors, typography, spacing, shadows, and animations defined in `fluent-design-system.css`.
+- Global styles complement the design system with utility classes, grid system, container styles, card styles, button styles, responsive and accessibility features in `global.css`.
+- The landing page is composed of components: Header, Hero, Features, Backstory, Testimonials, Footer.
+- The Hero component has a visually rich design with gradient backgrounds, floating elements, animations, and responsive layout.
+- The Hero CSS uses modern CSS features like grid, clamp for font sizes, keyframe animations, and mobile-first responsive design.
+
+Plan:
+- Review other key UI components such as Features, Testimonials, Header to understand their current design.
+- Identify UI/UX pain points and inconsistencies across components.
+- Propose a redesign plan focusing on:
+  - Consistent use of Fluent UI design tokens and spacing.
+  - Improved typography hierarchy and readability.
+  - Enhanced visual hierarchy and layout balance.
+  - Modern, clean, and accessible UI elements.
+  - Responsive and mobile-friendly design.
+- Implement the redesign incrementally starting with the landing page components.
+- Update CSS files to align with the new design.
+- Test the UI visually and functionally.
+
+Dependent Files to be edited:
+- src/components/Hero.tsx + Hero.css
+- src/components/Features.tsx + Features.css
+- src/components/Testimonials.tsx + Testimonials.css
+- src/components/Header.tsx + Header.css
+- Possibly src/components/Button.tsx + Button.css for consistent button styles
+- src/components/LandingPage.css for overall layout adjustments
+
+Followup steps:
+- Review the Features.tsx and Testimonials.tsx components and their styles.
+- Review Header.tsx and its styles.
+- After gathering all component info, finalize the redesign plan and get user confirmation.
+- Proceed with implementation after approval.
+
+<ask_followup_question>
+<question>Shall I proceed with reviewing the Features and Testimonials components next to complete the redesign plan? Any specific UI/UX improvements you want prioritized?</question>
+</ask_followup_question>
