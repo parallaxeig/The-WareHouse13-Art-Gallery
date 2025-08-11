@@ -1,5 +1,6 @@
 import React from 'react';
-import Header from './components/Header';
+import HeaderComponent from './components/HeaderComponent';
+
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Testimonials from './components/Testimonials';
@@ -14,7 +15,8 @@ import './styles/global.css';
 function App() {
   return (
     <div className="fluent-app">
-      <Header />
+      <HeaderComponent />
+
       
       <main className="fluent-main">
         <section id="hero" className="fluent-section">
