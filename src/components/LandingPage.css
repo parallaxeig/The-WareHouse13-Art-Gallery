@@ -1,4 +1,21 @@
+/* Landing Page Styles */
+
 .landing-page {
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  overflow-x: hidden;
+}
+
+.landing-page__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .landing-page__container {
+    padding: 0 1rem;
+  }
 }
