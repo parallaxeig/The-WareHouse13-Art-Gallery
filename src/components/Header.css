@@ -7,8 +7,8 @@
   background-color: var(--fluent-color-neutral-0);
   border-bottom: 1px solid var(--fluent-color-neutral-8);
   transition: all var(--fluent-duration-normal) var(--fluent-curve-easy-ease);
-  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }
 
 .fluent-header--scrolled {
