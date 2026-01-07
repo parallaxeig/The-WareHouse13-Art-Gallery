@@ -9,9 +9,9 @@ interface ImageDiagnosticToolProps {
   className?: string;
 }
 
-const ImageDiagnosticTool: React.FC<ImageDiagnosticToolProps> = ({ 
-  autoScan = false, 
-  className = '' 
+const ImageDiagnosticTool: React.FC<ImageDiagnosticToolProps> = ({
+  autoScan = false,
+  className = ''
 }) => {
   const [customUrls, setCustomUrls] = useState('');
   const [showAdvanced, setShowAdvanced] = useState(false);
@@ -29,7 +29,7 @@ const ImageDiagnosticTool: React.FC<ImageDiagnosticToolProps> = ({
   const extractImageUrls = (): string[] => {
     const images = document.querySelectorAll('img');
     const urls: string[] = [];
-    
+
     images.forEach(img => {
       if (img.src && !urls.includes(img.src)) {
         urls.push(img.src);
@@ -61,7 +61,7 @@ const ImageDiagnosticTool: React.FC<ImageDiagnosticToolProps> = ({
       .split('\\n')
       .map(url => url.trim())
       .filter(url => url.length > 0);
-    
+
     await runDiagnostics(urls, options);
   };
 
@@ -127,8 +127,8 @@ const ImageDiagnosticTool: React.FC<ImageDiagnosticToolProps> = ({
 
       <section className="diagnostic-tool__controls" aria-label="Diagnostic Controls">
         <div className="diagnostic-tool__primary-actions">
-          <Button 
-            variant="primary" 
+          <Button
+            variant="primary"
             size="md"
             onClick={handleScanPage}
             disabled={isRunning}
@@ -138,9 +138,9 @@ const ImageDiagnosticTool: React.FC<ImageDiagnosticToolProps> = ({
           >
             {isRunning ? 'Scanning Page...' : 'Scan Current Page'}
           </Button>
-          
-          <Button 
-            variant="outline" 
+
+          <Button
+            variant="outline"
             size="md"
             onClick={() => setShowAdvanced(!showAdvanced)}
             rightIcon={showAdvanced ? '▲' : '▼'}
@@ -156,8 +156,8 @@ const ImageDiagnosticTool: React.FC<ImageDiagnosticToolProps> = ({
         </div>
 
         {showAdvanced && (
-          <div 
-            id="advanced-options" 
+          <div
+            id="advanced-options"
             className="diagnostic-tool__advanced animate-fade-in"
             role="region"
             aria-label="Advanced Options"
@@ -175,7 +175,7 @@ const ImageDiagnosticTool: React.FC<ImageDiagnosticToolProps> = ({
                   max="30000"
                   step="1000"
                   value={options.timeout}
-                  onChange={(e) => setOptions({...options, timeout: parseInt(e.target.value)})}
+                  onChange={(e) => setOptions({ ...options, timeout: parseInt(e.target.value) })}
                   className="diagnostic-tool__input"
                   aria-describedby="timeout-help"
                 />
@@ -183,7 +183,7 @@ const ImageDiagnosticTool: React.FC<ImageDiagnosticToolProps> = ({
                   Maximum time to wait for image loading
                 </div>
               </div>
-              
+
               <div className="diagnostic-tool__option">
                 <label htmlFor="filesize-input" className="diagnostic-tool__label">
                   Max File Size (MB)
@@ -195,7 +195,7 @@ const ImageDiagnosticTool: React.FC<ImageDiagnosticToolProps> = ({
                   max="50"
                   step="0.5"
                   value={options.maxFileSize / 1024 / 1024}
-                  onChange={(e) => setOptions({...options, maxFileSize: parseFloat(e.target.value) * 1024 * 1024})}
+                  onChange={(e) => setOptions({ ...options, maxFileSize: parseFloat(e.target.value) * 1024 * 1024 })}
                   className="diagnostic-tool__input"
                   aria-describedby="filesize-help"
                 />
@@ -203,14 +203,24 @@ const ImageDiagnosticTool: React.FC<ImageDiagnosticToolProps> = ({
                   Flag images larger than this size
                 </div>
               </div>
-              
+
               <div className="diagnostic-tool__option diagnostic-tool__option--checkbox">
-                <label htmlFor="dimensions-check" className="diagnostic-tool__checkbox-label">
+                <label
+                  htmlFor="dimensions-check"
+                  className="diagnostic-tool__checkbox-label"
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    gap: '12px',
+                    cursor: 'pointer'
+                  }}
+                >
                   <input
                     id="dimensions-check"
                     type="checkbox"
                     checked={options.checkDimensions}
-                    onChange={(e) => setOptions({...options, checkDimensions: e.target.checked})}
+                    onChange={(e) => setOptions({ ...options, checkDimensions: e.target.checked })}
                     className="diagnostic-tool__checkbox"
                   />
                   <span className="diagnostic-tool__checkbox-text">
@@ -234,7 +244,9 @@ const ImageDiagnosticTool: React.FC<ImageDiagnosticToolProps> = ({
             ref={textareaRef}
             value={customUrls}
             onChange={(e) => setCustomUrls(e.target.value)}
-            placeholder="Enter image URLs, one per line:\\nhttps://example.com/image1.jpg\\nhttps://example.com/image2.png"
+            placeholder={`Enter image URLs, one per line:
+https://example.com/image1.jpg
+https://example.com/image2.png`}
             rows={4}
             className="diagnostic-tool__textarea"
             aria-describedby="custom-urls-help"
@@ -242,8 +254,8 @@ const ImageDiagnosticTool: React.FC<ImageDiagnosticToolProps> = ({
           <div id="custom-urls-help" className="diagnostic-tool__input-help">
             Enter one URL per line to test specific images
           </div>
-          <Button 
-            variant="secondary" 
+          <Button
+            variant="secondary"
             size="md"
             onClick={handleScanCustomUrls}
             disabled={isRunning || !customUrls.trim()}
@@ -278,27 +290,27 @@ const ImageDiagnosticTool: React.FC<ImageDiagnosticToolProps> = ({
           <header className="diagnostic-tool__results-header">
             <h3 className="diagnostic-tool__results-title">Diagnostic Results</h3>
             <div className="diagnostic-tool__results-actions">
-              <Button 
-                variant="ghost" 
-                size="sm" 
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={handleCopyReport}
                 leftIcon={copySuccess ? '✅' : '📋'}
                 aria-label={copySuccess ? 'Report copied' : 'Copy report to clipboard'}
               >
                 {copySuccess ? 'Copied!' : 'Copy Report'}
               </Button>
-              <Button 
-                variant="ghost" 
-                size="sm" 
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={handleDownloadReport}
                 leftIcon="💾"
                 aria-label="Download report as text file"
               >
                 Download
               </Button>
-              <Button 
-                variant="ghost" 
-                size="sm" 
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={clearResults}
                 leftIcon="🗑️"
                 aria-label="Clear all results"
@@ -336,12 +348,12 @@ const ImageDiagnosticTool: React.FC<ImageDiagnosticToolProps> = ({
 
           <div className="diagnostic-tool__results-list">
             {results.map((result, index) => (
-              <article 
-                key={index} 
+              <article
+                key={index}
                 className={`diagnostic-tool__result-item diagnostic-tool__result-item--${result.status}`}
               >
                 <header className="diagnostic-tool__result-header">
-                  <span 
+                  <span
                     className="diagnostic-tool__result-status"
                     style={{ color: getStatusColor(result.status) }}
                     aria-label={`Status: ${result.status}`}
@@ -352,7 +364,7 @@ const ImageDiagnosticTool: React.FC<ImageDiagnosticToolProps> = ({
                     {result.url}
                   </span>
                 </header>
-                
+
                 <div className="diagnostic-tool__result-details">
                   {result.loadTime && (
                     <span className="diagnostic-tool__result-detail">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Sparkles, Rocket, Palette, TrendingUp, Users } from 'lucide-react';
 import Button from './Button';
 import './Hero.css';
 
@@ -13,7 +14,8 @@ const Hero: React.FC = () => {
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-badge">
-            <span className="hero-badge__text">✨ Now with VR/AR Support</span>
+            <Sparkles className="hero-badge__icon" size={16} />
+            <span className="hero-badge__text">Now with VR/AR Support</span>
           </div>
 
           <h1 className="hero-title">
@@ -27,10 +29,10 @@ const Hero: React.FC = () => {
           </p>
 
           <div className="hero-actions">
-            <Button variant="primary" size="lg" leftIcon="🚀">
+            <Button variant="primary" size="lg" leftIcon={<Rocket size={20} />}>
               Start Creating
             </Button>
-            <Button variant="outline" size="lg" leftIcon="🎨">
+            <Button variant="outline" size="lg" leftIcon={<Palette size={20} />}>
               Explore Gallery
             </Button>
           </div>
@@ -39,23 +41,23 @@ const Hero: React.FC = () => {
         <div className="hero-visual">
           <div className="hero-card-stack">
             {/* Main featured visual */}
-            <img src="/hero-visual.png" alt="Futuristic VR Gallery Interface" className="hero-visual__main-img" />
+            <img src="/nft-2.png" alt="Futuristic VR Gallery Interface" className="hero-visual__main-img" />
 
             {/* Floating Stats */}
             <div className="floating-element float-1">
-              <span className="float-icon">💎</span>
+              <TrendingUp className="float-icon" size={24} color="#4ca1af" />
               <div>
                 <div className="float-label">Volume</div>
                 <div className="float-stat">$2M+</div>
               </div>
             </div>
+          </div>
 
-            <div className="floating-element float-2">
-              <span className="float-icon">👥</span>
-              <div>
-                <div className="float-label">Artists</div>
-                <div className="float-stat">5k+</div>
-              </div>
+          <div className="floating-element float-2">
+            <Users className="float-icon" size={24} color="#c4e0e5" />
+            <div>
+              <div className="float-label">Artists</div>
+              <div className="float-stat">5k+</div>
             </div>
           </div>
         </div>

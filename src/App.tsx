@@ -55,12 +55,12 @@ function App() {
           </div>
         </section>
 
-        <section id="create" className="fluent-section fluent-mt-xxxl">
+        {/* <section id="create" className="fluent-section fluent-mt-xxxl">
           <div className="fluent-container">
             <h2 className="fluent-text-title-1 fluent-mb-xl">Create Your Masterpiece</h2>
             <ImageDiagnosticTool />
           </div>
-        </section>
+        </section> */}
 
         <Features />
 

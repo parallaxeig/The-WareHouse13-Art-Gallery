@@ -1,4 +1,5 @@
 import React from 'react';
+import { Rocket } from 'lucide-react';
 import './Community.css';
 
 const Community: React.FC = () => {
@@ -18,7 +19,7 @@ const Community: React.FC = () => {
 
                 <div className="community-actions">
                     <button className="community-btn-discord">
-                        <span>🚀</span> Join Discord Community
+                        <Rocket size={20} /> Join Discord Community
                     </button>
                 </div>
             </div>

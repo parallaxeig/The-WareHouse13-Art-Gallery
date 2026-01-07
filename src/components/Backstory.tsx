@@ -1,4 +1,5 @@
 import React from 'react';
+import { Quote, Image as ImageIcon } from 'lucide-react';
 import './Backstory.css';
 
 const Backstory: React.FC = () => {
@@ -30,17 +31,18 @@ const Backstory: React.FC = () => {
 
         <div className="backstory-visual">
           {/* Conceptual visual representation */}
-          <div style={{
-            width: '100%',
-            height: '400px',
-            background: 'linear-gradient(45deg, #1a1a1a, #2a2a2a)',
-            borderRadius: '24px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            border: '1px solid rgba(255,255,255,0.05)'
-          }}>
-            <span style={{ fontSize: '4rem', opacity: 0.2 }}>🖼️ 13</span>
+          <div className="backstory-visual">
+            <img
+              src="/nft-3.png"
+              alt="Warehouse 13 Immersive Example"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                borderRadius: '24px',
+                border: '1px solid rgba(255,255,255,0.1)'
+              }}
+            />
           </div>
         </div>
       </div>

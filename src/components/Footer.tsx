@@ -1,4 +1,5 @@
 import React from 'react';
+import { Twitter, MessageCircle, Instagram, Linkedin, Mail, Globe } from 'lucide-react';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -12,10 +13,10 @@ const Footer: React.FC = () => {
               The premier immersive VR/AR NFT gallery platform. Experience art without boundaries.
             </p>
             <div className="social-links">
-              <a href="#" className="social-link" aria-label="Twitter">🐦</a>
-              <a href="#" className="social-link" aria-label="Discord">💬</a>
-              <a href="#" className="social-link" aria-label="Instagram">📷</a>
-              <a href="#" className="social-link" aria-label="LinkedIn">💼</a>
+              <a href="#" className="social-link" aria-label="Twitter"><Twitter size={20} /></a>
+              <a href="#" className="social-link" aria-label="Discord"><MessageCircle size={20} /></a>
+              <a href="#" className="social-link" aria-label="Instagram"><Instagram size={20} /></a>
+              <a href="#" className="social-link" aria-label="LinkedIn"><Linkedin size={20} /></a>
             </div>
           </div>
 
@@ -52,7 +53,7 @@ const Footer: React.FC = () => {
 
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © 2024 The Warehouse 13 Art Gallery. All rights reserved.
+            © 2026 ParallaxEIG. All rights reserved.
           </p>
           <div className="footer-legal">
             <a href="#" className="footer-legal-link">Privacy</a>

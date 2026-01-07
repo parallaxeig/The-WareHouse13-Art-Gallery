@@ -31,6 +31,9 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    padding-bottom: 0.2em;
+    /* Prevent descender clipping */
+    line-height: 1.2;
 }
 
 .community-description {
