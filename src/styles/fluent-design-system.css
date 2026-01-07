@@ -1,78 +1,87 @@
-/* Fluent UI 2 Design System Variables */
+/* Fluent UI 2 Design System Variables - Premium Dark Mode */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
 
 :root {
-  /* Fluent UI 2 Color Palette */
-  --fluent-color-brand-10: #061724;
-  --fluent-color-brand-20: #082338;
-  --fluent-color-brand-30: #0a2e4a;
-  --fluent-color-brand-40: #0c3b5e;
-  --fluent-color-brand-50: #0e4775;
-  --fluent-color-brand-60: #115ea3;
-  --fluent-color-brand-70: #0f6cbd;
-  --fluent-color-brand-80: #2886de;
-  --fluent-color-brand-90: #479ef5;
-  --fluent-color-brand-100: #62abf5;
-  --fluent-color-brand-110: #77b7f7;
-  --fluent-color-brand-120: #96c6fa;
-  --fluent-color-brand-130: #b4d6fa;
-  --fluent-color-brand-140: #cfe4fa;
-  --fluent-color-brand-150: #deecfc;
-  --fluent-color-brand-160: #eff6fc;
+  /* Brand Colors - Neon Blue/Cyan for Cyberpunk/NFT feel */
+  --fluent-color-brand-10: #000810;
+  --fluent-color-brand-20: #001223;
+  --fluent-color-brand-30: #001e3b;
+  --fluent-color-brand-40: #002b55;
+  --fluent-color-brand-50: #003a73;
+  --fluent-color-brand-60: #004c94;
+  --fluent-color-brand-70: #0078d4;
+  /* Core Brand */
+  --fluent-color-brand-80: #2b88d8;
+  --fluent-color-brand-90: #4ca0e0;
+  --fluent-color-brand-100: #6cb8e9;
+  --fluent-color-brand-110: #8ccff2;
+  --fluent-color-brand-120: #ade5fb;
+  --fluent-color-brand-130: #cff0ff;
+  --fluent-color-brand-140: #e0f6ff;
+  --fluent-color-brand-150: #f0faff;
+  --fluent-color-brand-160: #f7fcff;
 
-  /* Neutral Colors */
-  --fluent-color-neutral-0: #ffffff;
-  --fluent-color-neutral-2: #fafafa;
-  --fluent-color-neutral-4: #f5f5f5;
-  --fluent-color-neutral-6: #f0f0f0;
-  --fluent-color-neutral-8: #ebebeb;
-  --fluent-color-neutral-10: #e6e6e6;
-  --fluent-color-neutral-12: #e1e1e1;
-  --fluent-color-neutral-14: #dcdcdc;
-  --fluent-color-neutral-16: #d7d7d7;
-  --fluent-color-neutral-18: #d2d2d2;
-  --fluent-color-neutral-20: #cccccc;
-  --fluent-color-neutral-22: #c7c7c7;
-  --fluent-color-neutral-24: #c2c2c2;
-  --fluent-color-neutral-26: #bdbdbd;
-  --fluent-color-neutral-28: #b8b8b8;
-  --fluent-color-neutral-30: #b3b3b3;
+  /* Neutral Colors - Dark Theme */
+  --fluent-color-neutral-0: #050505;
+  /* Darker black for better contrast */
+  /* Background */
+  --fluent-color-neutral-2: #0a0a0a;
+  --fluent-color-neutral-4: #141414;
+  /* Card Background */
+  --fluent-color-neutral-6: #1f1f1f;
+  --fluent-color-neutral-8: #292929;
+  --fluent-color-neutral-10: #333333;
+  --fluent-color-neutral-12: #3d3d3d;
+  --fluent-color-neutral-14: #474747;
+  --fluent-color-neutral-16: #5c5c5c;
+  --fluent-color-neutral-18: #666666;
+  --fluent-color-neutral-20: #707070;
+  --fluent-color-neutral-22: #7a7a7a;
+  --fluent-color-neutral-24: #858585;
+  --fluent-color-neutral-26: #8f8f8f;
+  --fluent-color-neutral-28: #999999;
+  --fluent-color-neutral-30: #a3a3a3;
   --fluent-color-neutral-32: #adadad;
-  --fluent-color-neutral-34: #a8a8a8;
-  --fluent-color-neutral-36: #a3a3a3;
-  --fluent-color-neutral-38: #9e9e9e;
-  --fluent-color-neutral-40: #999999;
-  --fluent-color-neutral-42: #949494;
-  --fluent-color-neutral-44: #8f8f8f;
-  --fluent-color-neutral-46: #8a8a8a;
-  --fluent-color-neutral-48: #858585;
-  --fluent-color-neutral-50: #808080;
-  --fluent-color-neutral-52: #7a7a7a;
-  --fluent-color-neutral-54: #757575;
-  --fluent-color-neutral-56: #707070;
-  --fluent-color-neutral-58: #6b6b6b;
-  --fluent-color-neutral-60: #666666;
-  --fluent-color-neutral-62: #616161;
-  --fluent-color-neutral-64: #5c5c5c;
-  --fluent-color-neutral-66: #575757;
-  --fluent-color-neutral-68: #525252;
-  --fluent-color-neutral-70: #4d4d4d;
-  --fluent-color-neutral-72: #484848;
-  --fluent-color-neutral-74: #434343;
-  --fluent-color-neutral-76: #3e3e3e;
-  --fluent-color-neutral-78: #393939;
-  --fluent-color-neutral-80: #333333;
-  --fluent-color-neutral-82: #2e2e2e;
-  --fluent-color-neutral-84: #292929;
-  --fluent-color-neutral-86: #242424;
-  --fluent-color-neutral-88: #1f1f1f;
-  --fluent-color-neutral-90: #1a1a1a;
-  --fluent-color-neutral-92: #151515;
-  --fluent-color-neutral-94: #101010;
-  --fluent-color-neutral-96: #0b0b0b;
-  --fluent-color-neutral-98: #060606;
-  --fluent-color-neutral-100: #000000;
+  --fluent-color-neutral-34: #b8b8b8;
+  --fluent-color-neutral-36: #c2c2c2;
+  --fluent-color-neutral-38: #cccccc;
+  --fluent-color-neutral-40: #d1d1d1;
+  --fluent-color-neutral-42: #d6d6d6;
+  --fluent-color-neutral-44: #dbdbdb;
+  --fluent-color-neutral-46: #e0e0e0;
+  --fluent-color-neutral-48: #e6e6e6;
+  --fluent-color-neutral-50: #ebebeb;
+  --fluent-color-neutral-52: #f0f0f0;
+  --fluent-color-neutral-54: #f5f5f5;
+  --fluent-color-neutral-56: #fafafa;
+  --fluent-color-neutral-58: #ffffff;
+  /* Text Primary */
+  --fluent-color-neutral-60: #ffffff;
+  --fluent-color-neutral-62: #ffffff;
+  --fluent-color-neutral-64: #ffffff;
+  --fluent-color-neutral-66: #ffffff;
+  --fluent-color-neutral-68: #ffffff;
+  --fluent-color-neutral-70: #ffffff;
+  --fluent-color-neutral-72: #ffffff;
+  --fluent-color-neutral-74: #ffffff;
+  --fluent-color-neutral-76: #ffffff;
+  --fluent-color-neutral-78: #ffffff;
+  --fluent-color-neutral-80: #ffffff;
+  --fluent-color-neutral-82: #ffffff;
+  --fluent-color-neutral-84: #ffffff;
+  --fluent-color-neutral-86: #ffffff;
+  --fluent-color-neutral-88: #ffffff;
+  --fluent-color-neutral-90: #ffffff;
+  /* Primary Text */
+  --fluent-color-neutral-92: #ffffff;
+  --fluent-color-neutral-94: #ffffff;
+  --fluent-color-neutral-96: #ffffff;
+  --fluent-color-neutral-98: #ffffff;
+  --fluent-color-neutral-100: #ffffff;
 
-  /* Semantic Colors */
+  /* Semantic Colors - High Contrast for Dark Mode */
   --fluent-color-success-10: #107c10;
   --fluent-color-success-20: #13a10e;
   --fluent-color-success-30: #16c60c;
@@ -92,9 +101,10 @@
   --fluent-color-danger-50: #fae7e8;
 
   /* Typography */
-  --fluent-font-family-base: 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+  --fluent-font-family-base: 'Inter', 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+  --fluent-font-family-heading: 'Outfit', 'Inter', system-ui, sans-serif;
   --fluent-font-family-monospace: 'Cascadia Code', 'Consolas', 'Courier New', monospace;
-  --fluent-font-family-numeric: 'Bahnschrift', 'Segoe UI', system-ui, sans-serif;
+  --fluent-font-family-numeric: 'Outfit', 'Bahnschrift', 'Segoe UI', system-ui, sans-serif;
 
   /* Font Sizes */
   --fluent-font-size-100: 10px;
@@ -128,10 +138,10 @@
 
   /* Border Radius */
   --fluent-border-radius-none: 0;
-  --fluent-border-radius-small: 2px;
-  --fluent-border-radius-medium: 4px;
-  --fluent-border-radius-large: 6px;
-  --fluent-border-radius-xlarge: 8px;
+  --fluent-border-radius-small: 4px;
+  --fluent-border-radius-medium: 6px;
+  --fluent-border-radius-large: 12px;
+  --fluent-border-radius-xlarge: 16px;
   --fluent-border-radius-circular: 50%;
 
   /* Spacing */
@@ -159,13 +169,14 @@
   --fluent-space-vertical-xxl: 24px;
   --fluent-space-vertical-xxxl: 32px;
 
-  /* Shadows */
-  --fluent-shadow-2: 0px 1px 2px rgba(0, 0, 0, 0.14), 0px 0px 2px rgba(0, 0, 0, 0.12);
-  --fluent-shadow-4: 0px 2px 4px rgba(0, 0, 0, 0.14), 0px 0px 2px rgba(0, 0, 0, 0.12);
-  --fluent-shadow-8: 0px 4px 8px rgba(0, 0, 0, 0.14), 0px 0px 2px rgba(0, 0, 0, 0.12);
-  --fluent-shadow-16: 0px 8px 16px rgba(0, 0, 0, 0.14), 0px 0px 2px rgba(0, 0, 0, 0.12);
-  --fluent-shadow-28: 0px 14px 28px rgba(0, 0, 0, 0.24), 0px 0px 8px rgba(0, 0, 0, 0.20);
-  --fluent-shadow-64: 0px 32px 64px rgba(0, 0, 0, 0.24), 0px 0px 8px rgba(0, 0, 0, 0.20);
+  /* Shadows - Adjusted for Dark Mode (Glows!) */
+  --fluent-shadow-2: 0px 1px 2px rgba(0, 0, 0, 0.4), 0px 0px 2px rgba(0, 0, 0, 0.3);
+  --fluent-shadow-4: 0px 2px 4px rgba(0, 0, 0, 0.4), 0px 0px 2px rgba(0, 0, 0, 0.3);
+  --fluent-shadow-8: 0px 4px 8px rgba(0, 0, 0, 0.4), 0px 0px 2px rgba(0, 0, 0, 0.3);
+  --fluent-shadow-16: 0px 8px 16px rgba(0, 0, 0, 0.4), 0px 0px 2px rgba(0, 0, 0, 0.3);
+  --fluent-shadow-28: 0px 14px 28px rgba(0, 0, 0, 0.5), 0px 0px 8px rgba(0, 0, 0, 0.4);
+  --fluent-shadow-64: 0px 32px 64px rgba(0, 0, 0, 0.5), 0px 0px 8px rgba(0, 0, 0, 0.4);
+  --fluent-shadow-glow: 0px 0px 20px rgba(0, 120, 212, 0.3);
 
   /* Motion */
   --fluent-duration-ultra-fast: 50ms;
@@ -222,12 +233,14 @@ body {
   font-size: var(--fluent-font-size-200);
   line-height: var(--fluent-line-height-200);
   font-weight: var(--fluent-font-weight-regular);
+  color: var(--fluent-color-neutral-36);
 }
 
 .fluent-text-caption-1-strong {
   font-size: var(--fluent-font-size-200);
   line-height: var(--fluent-line-height-200);
   font-weight: var(--fluent-font-weight-semibold);
+  color: var(--fluent-color-neutral-100);
 }
 
 .fluent-text-body-1 {
@@ -246,40 +259,59 @@ body {
   font-size: var(--fluent-font-size-400);
   line-height: var(--fluent-line-height-400);
   font-weight: var(--fluent-font-weight-regular);
+  color: var(--fluent-color-neutral-42);
 }
 
 .fluent-text-subtitle-2 {
   font-size: var(--fluent-font-size-500);
   line-height: var(--fluent-line-height-500);
   font-weight: var(--fluent-font-weight-semibold);
+  letter-spacing: -0.01em;
 }
 
 .fluent-text-title-3 {
   font-size: var(--fluent-font-size-600);
   line-height: var(--fluent-line-height-600);
   font-weight: var(--fluent-font-weight-semibold);
+  letter-spacing: -0.015em;
 }
 
 .fluent-text-title-2 {
   font-size: var(--fluent-font-size-700);
   line-height: var(--fluent-line-height-700);
   font-weight: var(--fluent-font-weight-semibold);
+  letter-spacing: -0.02em;
 }
 
 .fluent-text-title-1 {
   font-size: var(--fluent-font-size-800);
   line-height: var(--fluent-line-height-800);
-  font-weight: var(--fluent-font-weight-semibold);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, var(--fluent-color-brand-100) 0%, var(--fluent-color-brand-70) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .fluent-text-large-title {
   font-size: var(--fluent-font-size-900);
   line-height: var(--fluent-line-height-900);
-  font-weight: var(--fluent-font-weight-semibold);
+  font-weight: var(--fluent-font-weight-bold);
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #ffffff 0%, var(--fluent-color-brand-110) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .fluent-text-display {
   font-size: var(--fluent-font-size-1000);
   line-height: var(--fluent-line-height-1000);
-  font-weight: var(--fluent-font-weight-semibold);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  background: linear-gradient(90deg, #fff 20%, var(--fluent-color-brand-80) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

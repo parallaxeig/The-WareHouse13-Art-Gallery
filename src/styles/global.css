@@ -1,66 +1,168 @@
 /* Global styles to complement Fluent UI 2 Design System */
 
-/* Ensure proper box-sizing */
-* {
-  box-sizing: border-box;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Body styles */
+/* Reset & Base */
+html,
 body {
   margin: 0;
   padding: 0;
-  font-family: var(--fluent-font-family-base);
-  font-size: var(--fluent-font-size-300);
-  line-height: var(--fluent-line-height-300);
-  color: var(--fluent-color-neutral-90);
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
+}
+
+body {
   background-color: var(--fluent-color-neutral-0);
+  background:
+    radial-gradient(circle at 15% 50%, rgba(0, 120, 212, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(135, 100, 184, 0.05) 0%, transparent 25%);
+  min-height: 100vh;
+  color: var(--fluent-color-neutral-90);
+  font-family: var(--fluent-font-family-base);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings usage */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fluent-font-family-heading);
+  margin-top: 0;
+}
+
+/* Card styles - Premium Glassmorphism */
+.fluent-card {
+  background: rgba(30, 30, 30, 0.5);
+  /* Semi-transparent neutral */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--fluent-border-radius-xlarge);
+  padding: var(--fluent-space-vertical-l);
+  /* Inner glow */
+  box-shadow:
+    0 4px 24px -1px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  transition: all var(--fluent-duration-normal) var(--fluent-curve-easy-ease);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  /* Ensure cards in grid stretch */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover effect for cards */
+.fluent-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--fluent-border-radius-xlarge);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0);
+  transition: box-shadow var(--fluent-duration-fast) ease;
+  pointer-events: none;
+}
+
+.fluent-card:hover {
+  transform: translateY(-4px);
+  background: rgba(40, 40, 40, 0.6);
+  box-shadow:
+    0 12px 32px -4px rgba(0, 0, 0, 0.4),
+    var(--fluent-shadow-glow);
+}
+
+.fluent-card:hover::after {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.fluent-card__content {
+  padding: var(--fluent-space-vertical-m) 0 0 0;
+  flex: 1;
+  /* Push footer or bottom elements down if needed */
 }
 
 /* Image styles */
-img {
-  max-width: 100%;
+.fluent-image {
+  width: 100%;
   height: auto;
+  border-radius: var(--fluent-border-radius-large);
+  /* Slight sheen on images */
+  position: relative;
   display: block;
 }
 
-/* Utility classes for spacing */
-.fluent-mt-xs { margin-top: var(--fluent-space-vertical-xs); }
-.fluent-mt-s { margin-top: var(--fluent-space-vertical-s); }
-.fluent-mt-m { margin-top: var(--fluent-space-vertical-m); }
-.fluent-mt-l { margin-top: var(--fluent-space-vertical-l); }
-.fluent-mt-xl { margin-top: var(--fluent-space-vertical-xl); }
-.fluent-mt-xxl { margin-top: var(--fluent-space-vertical-xxl); }
-.fluent-mt-xxxl { margin-top: var(--fluent-space-vertical-xxxl); }
+/* Button styles */
+.fluent-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--fluent-space-horizontal-s);
+  padding: var(--fluent-space-vertical-s) var(--fluent-space-horizontal-l);
+  border: 1px solid transparent;
+  border-radius: var(--fluent-border-radius-medium);
+  font-family: var(--fluent-font-family-base);
+  /* keep button text UI neutral */
+  font-size: var(--fluent-font-size-300);
+  font-weight: var(--fluent-font-weight-semibold);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--fluent-duration-fast) cubic-bezier(0.1, 0.9, 0.2, 1);
+  min-height: 36px;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.01em;
+}
 
-.fluent-mb-xs { margin-bottom: var(--fluent-space-vertical-xs); }
-.fluent-mb-s { margin-bottom: var(--fluent-space-vertical-s); }
-.fluent-mb-m { margin-bottom: var(--fluent-space-vertical-m); }
-.fluent-mb-l { margin-bottom: var(--fluent-space-vertical-l); }
-.fluent-mb-xl { margin-bottom: var(--fluent-space-vertical-xl); }
-.fluent-mb-xxl { margin-bottom: var(--fluent-space-vertical-xxl); }
-.fluent-mb-xxxl { margin-bottom: var(--fluent-space-vertical-xxxl); }
+.fluent-button:active {
+  transform: scale(0.97);
+}
 
-.fluent-pt-xs { padding-top: var(--fluent-space-vertical-xs); }
-.fluent-pt-s { padding-top: var(--fluent-space-vertical-s); }
-.fluent-pt-m { padding-top: var(--fluent-space-vertical-m); }
-.fluent-pt-l { padding-top: var(--fluent-space-vertical-l); }
-.fluent-pt-xl { padding-top: var(--fluent-space-vertical-xl); }
+/* Primary Button - Brand Gradient */
+.fluent-button--primary {
+  background: linear-gradient(135deg, var(--fluent-color-brand-60) 0%, var(--fluent-color-brand-70) 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 120, 212, 0.3);
+}
 
-.fluent-pb-xs { padding-bottom: var(--fluent-space-vertical-xs); }
-.fluent-pb-s { padding-bottom: var(--fluent-space-vertical-s); }
-.fluent-pb-m { padding-bottom: var(--fluent-space-vertical-m); }
-.fluent-pb-l { padding-bottom: var(--fluent-space-vertical-l); }
-.fluent-pb-xl { padding-bottom: var(--fluent-space-vertical-xl); }
+.fluent-button--primary:hover {
+  background: linear-gradient(135deg, var(--fluent-color-brand-70) 0%, var(--fluent-color-brand-80) 100%);
+  box-shadow: 0 4px 16px rgba(0, 120, 212, 0.5);
+}
+
+.fluent-button--secondary {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--fluent-color-neutral-100);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.fluent-button--secondary:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.fluent-button--outline {
+  background-color: transparent;
+  color: var(--fluent-color-brand-100);
+  border: 1px solid rgba(108, 184, 233, 0.3);
+}
+
+.fluent-button--outline:hover {
+  background-color: rgba(0, 120, 212, 0.1);
+  border-color: var(--fluent-color-brand-100);
+  color: var(--fluent-color-brand-110);
+}
 
 /* Grid system */
 .fluent-grid {
   display: grid;
-  gap: var(--fluent-space-horizontal-l);
+  gap: var(--fluent-space-horizontal-xl);
+  /* Increased gap */
 }
 
 .fluent-grid-2 {
@@ -75,212 +177,52 @@ img {
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* Container styles */
-.fluent-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--fluent-space-horizontal-l);
+/* Responsive */
+@media (max-width: 1024px) {
+
+  .fluent-grid-3,
+  .fluent-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.fluent-container--narrow {
-  max-width: 800px;
-}
+@media (max-width: 640px) {
 
-.fluent-container--wide {
-  max-width: 1400px;
-}
-
-/* Section styles */
-.fluent-section {
-  padding: var(--fluent-space-vertical-xxxl) 0;
-}
-
-/* Card styles */
-.fluent-card {
-  background-color: var(--fluent-color-neutral-0);
-  border: 1px solid var(--fluent-color-neutral-8);
-  border-radius: var(--fluent-border-radius-xlarge);
-  padding: var(--fluent-space-vertical-l);
-  box-shadow: var(--fluent-shadow-2);
-  transition: all var(--fluent-duration-normal) var(--fluent-curve-easy-ease);
-}
-
-.fluent-card:hover {
-  box-shadow: var(--fluent-shadow-8);
-  transform: translateY(-2px);
-  border-color: var(--fluent-color-neutral-12);
-}
-
-.fluent-card__content {
-  padding: var(--fluent-space-vertical-m) 0 0 0;
-}
-
-/* Image styles */
-.fluent-image {
-  width: 100%;
-  height: auto;
-  border-radius: var(--fluent-border-radius-large);
-}
-
-/* Button styles */
-.fluent-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--fluent-space-horizontal-s);
-  padding: var(--fluent-space-vertical-s) var(--fluent-space-horizontal-m);
-  border: 1px solid transparent;
-  border-radius: var(--fluent-border-radius-medium);
-  font-family: var(--fluent-font-family-base);
-  font-size: var(--fluent-font-size-300);
-  font-weight: var(--fluent-font-weight-medium);
-  text-decoration: none;
-  cursor: pointer;
-  transition: all var(--fluent-duration-normal) var(--fluent-curve-easy-ease);
-  min-height: 32px;
-}
-
-.fluent-button--sm {
-  padding: var(--fluent-space-vertical-xs) var(--fluent-space-horizontal-s);
-  font-size: var(--fluent-font-size-200);
-}
-
-.fluent-button--md {
-  padding: var(--fluent-space-vertical-s) var(--fluent-space-horizontal-m);
-  font-size: var(--fluent-font-size-300);
-}
-
-.fluent-button--lg {
-  padding: var(--fluent-space-vertical-m) var(--fluent-space-horizontal-l);
-  font-size: var(--fluent-font-size-400);
-}
-
-.fluent-button--primary {
-  background-color: var(--fluent-color-brand-70);
-  color: var(--fluent-color-neutral-0);
-  border-color: var(--fluent-color-brand-70);
-}
-
-.fluent-button--primary:hover {
-  background-color: var(--fluent-color-brand-80);
-  border-color: var(--fluent-color-brand-80);
-}
-
-.fluent-button--secondary {
-  background-color: var(--fluent-color-neutral-6);
-  color: var(--fluent-color-neutral-90);
-  border-color: var(--fluent-color-neutral-6);
-}
-
-.fluent-button--secondary:hover {
-  background-color: var(--fluent-color-neutral-8);
-  border-color: var(--fluent-color-neutral-8);
-}
-
-.fluent-button--outline {
-  background-color: transparent;
-  color: var(--fluent-color-brand-70);
-  border-color: var(--fluent-color-brand-70);
-}
-
-.fluent-button--outline:hover {
-  background-color: var(--fluent-color-brand-160);
-}
-
-.fluent-button--ghost {
-  background-color: transparent;
-  color: var(--fluent-color-neutral-90);
-  border-color: transparent;
-}
-
-.fluent-button--ghost:hover {
-  background-color: var(--fluent-color-neutral-4);
-}
-
-.fluent-button--subtle {
-  background-color: transparent;
-  color: var(--fluent-color-neutral-70);
-  border-color: transparent;
-}
-
-.fluent-button--subtle:hover {
-  background-color: var(--fluent-color-neutral-4);
-  color: var(--fluent-color-neutral-90);
-}
-
-.fluent-button--full-width {
-  width: 100%;
-}
-
-.fluent-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
   .fluent-grid-2,
   .fluent-grid-3,
   .fluent-grid-4 {
     grid-template-columns: 1fr;
-    gap: var(--fluent-space-horizontal-m);
   }
-  
+
   .fluent-container {
-    padding: 0 var(--fluent-space-horizontal-m);
-  }
-  
-  .fluent-section {
-    padding: var(--fluent-space-vertical-xl) 0;
+    padding: 0 var(--fluent-space-horizontal-l);
   }
 }
 
-@media (max-width: 480px) {
-  .fluent-container {
-    padding: 0 var(--fluent-space-horizontal-s);
-  }
-  
-  .fluent-card {
-    padding: var(--fluent-space-vertical-m);
-  }
+/* Utility spacers */
+.fluent-container {
+  max-width: 1280px;
+  /* Slightly wider */
+  margin: 0 auto;
+  padding: 0 var(--fluent-space-horizontal-xl);
 }
 
-/* Focus styles */
-:focus-visible {
-  outline: 2px solid var(--fluent-color-brand-80);
-  outline-offset: 2px;
-  border-radius: var(--fluent-border-radius-small);
+.fluent-section {
+  padding: var(--fluent-space-vertical-xxxl) 0;
+  position: relative;
 }
 
-/* Loading states */
-.fluent-loading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--fluent-space-vertical-xl);
+.fluent-mt-xxxl {
+  margin-top: 80px;
+  /* Explicit large spacing */
 }
 
-/* Animation utilities */
-.fluent-fade-in {
-  animation: fadeIn var(--fluent-duration-normal) var(--fluent-curve-easy-ease);
+.fluent-mb-xl {
+  margin-bottom: var(--fluent-space-vertical-xl);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+/* Section specific */
+#gallery .fluent-card img {
+  height: 300px;
+  object-fit: cover;
 }

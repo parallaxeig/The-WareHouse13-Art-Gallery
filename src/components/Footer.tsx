@@ -7,73 +7,57 @@ const Footer: React.FC = () => {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3 className="footer-title">The Warehouse 13 Art Gallery</h3>
+            <h3 className="footer-title">Warehouse 13</h3>
             <p className="footer-description">
-              Experience the future of digital art with our immersive VR/AR NFT gallery platform.
+              The premier immersive VR/AR NFT gallery platform. Experience art without boundaries.
             </p>
             <div className="social-links">
-              <a href="#" className="social-link" aria-label="Twitter">
-                <span className="social-icon">🐦</span>
-              </a>
-              <a href="#" className="social-link" aria-label="Discord">
-                <span className="social-icon">💬</span>
-              </a>
-              <a href="#" className="social-link" aria-label="Instagram">
-                <span className="social-icon">📷</span>
-              </a>
-              <a href="#" className="social-link" aria-label="LinkedIn">
-                <span className="social-icon">💼</span>
-              </a>
+              <a href="#" className="social-link" aria-label="Twitter">🐦</a>
+              <a href="#" className="social-link" aria-label="Discord">💬</a>
+              <a href="#" className="social-link" aria-label="Instagram">📷</a>
+              <a href="#" className="social-link" aria-label="LinkedIn">💼</a>
             </div>
           </div>
-          
+
           <div className="footer-section">
-            <h4 className="footer-section-title">Platform</h4>
+            <h4 className="footer-section-title">Marketplace</h4>
             <ul className="footer-links">
-              <li><a href="#" className="footer-link">Create NFT</a></li>
-              <li><a href="#" className="footer-link">Explore Gallery</a></li>
-              <li><a href="#" className="footer-link">VR Experience</a></li>
-              <li><a href="#" className="footer-link">Wallet Connect</a></li>
+              <li><a href="#" className="footer-link">All NFTs</a></li>
+              <li><a href="#" className="footer-link">New Art</a></li>
+              <li><a href="#" className="footer-link">Music</a></li>
+              <li><a href="#" className="footer-link">Virtual Worlds</a></li>
             </ul>
           </div>
-          
+
           <div className="footer-section">
-            <h4 className="footer-section-title">Support</h4>
+            <h4 className="footer-section-title">Resources</h4>
             <ul className="footer-links">
               <li><a href="#" className="footer-link">Help Center</a></li>
-              <li><a href="#" className="footer-link">Documentation</a></li>
-              <li><a href="#" className="footer-link">Community</a></li>
-              <li><a href="#" className="footer-link">Contact Us</a></li>
+              <li><a href="#" className="footer-link">Partners</a></li>
+              <li><a href="#" className="footer-link">Blog</a></li>
+              <li><a href="#" className="footer-link">Newsletter</a></li>
             </ul>
           </div>
-          
+
           <div className="footer-section">
-            <h4 className="footer-section-title">Contact</h4>
-            <div className="contact-info">
-              <p className="contact-item">
-                <span className="contact-icon">📧</span>
-                hello@nftartgallery.com
-              </p>
-              <p className="contact-item">
-                <span className="contact-icon">💬</span>
-                Join our Discord
-              </p>
-              <p className="contact-item">
-                <span className="contact-icon">🌐</span>
-                www.nftartgallery.com
-              </p>
-            </div>
+            <h4 className="footer-section-title">Company</h4>
+            <ul className="footer-links">
+              <li><a href="#" className="footer-link">About Us</a></li>
+              <li><a href="#" className="footer-link">Careers</a></li>
+              <li><a href="#" className="footer-link">Legal</a></li>
+              <li><a href="#" className="footer-link">Contact</a></li>
+            </ul>
           </div>
         </div>
-        
+
         <div className="footer-bottom">
           <p className="footer-copyright">
             © 2024 The Warehouse 13 Art Gallery. All rights reserved.
           </p>
           <div className="footer-legal">
-            <a href="#" className="footer-legal-link">Privacy Policy</a>
-            <a href="#" className="footer-legal-link">Terms of Service</a>
-            <a href="#" className="footer-legal-link">Cookie Policy</a>
+            <a href="#" className="footer-legal-link">Privacy</a>
+            <a href="#" className="footer-legal-link">Terms</a>
+            <a href="#" className="footer-legal-link">Cookies</a>
           </div>
         </div>
       </div>

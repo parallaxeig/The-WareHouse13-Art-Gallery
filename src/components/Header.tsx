@@ -21,15 +21,15 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    
+
     setIsMobileMenuOpen(false);
-    
+
     const element = document.querySelector(href);
     if (element) {
       const headerHeight = document.querySelector('.fluent-header')?.clientHeight || 70;
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - headerHeight - 20;
-      
+
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
@@ -58,8 +58,8 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           <ul className="fluent-header__nav-list">
             {navItems.map((item) => (
               <li key={item.label} className="fluent-header__nav-item">
-                <a 
-                  href={item.href} 
+                <a
+                  href={item.href}
                   className="fluent-header__nav-link fluent-text-body-1"
                   onClick={(e) => scrollToSection(e, item.href)}
                 >
@@ -81,7 +81,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
         <button
           className="fluent-header__mobile-toggle"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-expanded={isMobileMenuOpen ? 'true' : 'false'}
+          aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-menu"
           aria-label="Toggle mobile menu"
         >

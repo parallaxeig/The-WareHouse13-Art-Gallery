@@ -1,50 +1,66 @@
 .testimonials {
-  padding: 6rem 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  padding: 120px 0;
+  position: relative;
 }
 
-.testimonials-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.testimonials-header {
+.testimonials__header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 80px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.testimonials-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+.testimonials__title {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  background: linear-gradient(to right, #fff, #b3b3b3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.testimonials-subtitle {
+.testimonials__subtitle {
   font-size: 1.25rem;
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
+  color: var(--fluent-color-neutral-42);
 }
 
-.testimonials-grid {
+.testimonials__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
 
-@media (max-width: 768px) {
-  .testimonials {
-    padding: 4rem 0;
+/* Individual Item Animation Wrapper */
+.testimonials__item {
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .testimonials-title {
-    font-size: 2rem;
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .testimonials-grid {
+}
+
+@media (max-width: 1024px) {
+  .testimonials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonials__grid {
     grid-template-columns: 1fr;
+  }
+
+  .testimonials__title {
+    font-size: 2.25rem;
   }
 }

@@ -14,6 +14,7 @@ interface ButtonProps {
   fullWidth?: boolean;
   ariaLabel?: string;
   title?: string;
+  loading?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -29,26 +30,29 @@ const Button: React.FC<ButtonProps> = ({
   fullWidth = false,
   ariaLabel,
   title,
+  loading = false,
   ...rest
 }) => {
   const baseClass = 'fluent-button';
   const sizeClass = `fluent-button--${size}`;
   const variantClass = `fluent-button--${variant}`;
   const widthClass = fullWidth ? 'fluent-button--full-width' : '';
+  const loadingClass = loading ? 'fluent-button--loading' : '';
 
   return (
     <button
-      className={`${baseClass} ${sizeClass} ${variantClass} ${widthClass} ${className}`}
+      className={`${baseClass} ${sizeClass} ${variantClass} ${widthClass} ${loadingClass} ${className}`}
       onClick={onClick}
-      disabled={disabled}
+      disabled={disabled || loading}
       type={type}
       aria-label={ariaLabel}
       title={title}
       {...rest}
     >
-      {leftIcon && <span className="fluent-button__icon fluent-button__icon--left">{leftIcon}</span>}
-      {children && <span className="fluent-button__text">{children}</span>}
-      {rightIcon && <span className="fluent-button__icon fluent-button__icon--right">{rightIcon}</span>}
+      {loading && <span className="fluent-button__spinner" aria-hidden="true">Checking...</span>}
+      {!loading && leftIcon && <span className="fluent-button__icon fluent-button__icon--left">{leftIcon}</span>}
+      <span className="fluent-button__text">{loading ? 'Please wait' : children}</span>
+      {!loading && rightIcon && <span className="fluent-button__icon fluent-button__icon--right">{rightIcon}</span>}
     </button>
   );
 };
